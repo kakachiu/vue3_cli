@@ -1,0 +1,143 @@
+.contactMain
+  @include padNormal
+    height: 880px
+  @include phone
+    height: auto
+.contactOuter
+  display: flex
+  padding-top: 50px
+  position: relative
+  @include phone
+    padding-top: 0
+    flex-wrap: wrap
+  .envelope
+    position: absolute
+    width: 60%
+    transform: rotate(10deg)
+    @include xxlPlus
+      width: 70%
+    @include padPlus
+      width: 80%
+    @include pad
+      width: 70%
+    @include phone
+      display: none
+  .contactForm
+    box-shadow: 4px 4px 8px rgba($primaryColor,0.2)
+    width: 60%
+    background-color: #fff
+    border-radius: 5px
+    padding: 20px 80px 20px 20px
+    margin-top: 48px
+    font-weight: bold
+    z-index: 6
+    @include phone
+      width: 100%
+      padding: 15px
+      margin-top: 0px
+    .title
+      font-size: 20px
+      margin-bottom: 20px
+      color: $primaryColor
+    .form
+      & label,& input
+        display: block
+        font-size: 18px
+        color: lighten($primaryColor,5%)
+      & label
+        margin-bottom: 0px
+      & input,& textarea
+        width: 100%
+        border-radius: 5px
+        border: 1px solid #dfdfdf
+        padding: 10px
+        margin-bottom: 10px
+        &:focus
+          outline: 0
+          border: 1px solid $primaryColor
+      & textarea
+        resize: none
+        height: 150px
+        font-size: 18px
+      .sendBtn
+        background-color: $primaryColor
+        color: $lightColor
+        cursor: pointer
+        transition: 0.5s
+        font-weight: bold
+        letter-spacing: 1px
+        &:disabled
+          background-color: #eee
+          cursor: not-allowed
+          &:hover
+            background-color: #eee
+        &:hover
+          background-color: lighten($primaryColor,5%)
+      .invalid-feedback
+        margin-top: -8px
+        margin-bottom: 5px
+      .form-control.is-invalid
+        border-color: #dc3545
+  .contactInfo
+    width: 43%
+    z-index: 6
+    margin-top: 160px
+    padding: 40px
+    border-radius: 5px
+    background-color: $primaryColor
+    color: $lightColor
+    letter-spacing: 1px
+    font-weight: bold
+    box-shadow: 4px 4px 8px rgba($primaryColor,0.4)
+    position: absolute
+    right: 3%
+    top: 15%
+    @include xxlPlus
+      width: 50%
+      right: -10px
+    @include padPlus
+      width: 52%
+      padding: 20px
+      margin-top: 130px
+      right: -1px
+    @include pad
+      right: -8px
+    @include phone
+      width: 100%
+      position: static
+      margin-top: 20px
+    .title,.subTitle
+      margin-bottom: 10px
+      color: $lightColor
+    .title
+      font-size: 40px
+      @include small
+        font-size: 30px
+    .subTitle
+      margin-bottom: 40px
+      @include xxlPlus
+        margin-bottom: 30px
+      @include small
+        font-size: 14px
+    .contacContent
+      & p
+        color: $lightColor
+        @include small
+          font-size: 14px
+    .line
+      border: 2px solid $lightColor
+      position: absolute
+      width: 100%
+      height: 100%
+      top: -20px
+      left: 20px
+      border-image: linear-gradient(to bottom right, $lightColor 0%, $primaryColor 100%)
+      border-image-slice: 10
+      clip-path: inset(0 round 5px)
+      @include xxlPlus
+        top: -14px
+        left: 9px
+      @include pad
+        left: 6px
+      @include phone
+        display: none

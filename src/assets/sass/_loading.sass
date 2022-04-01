@@ -1,0 +1,83 @@
+@keyframes load 
+  0% 
+    transform: translate(50%,50%) scale(0)
+  25%
+    transform: translate(50%,50%) scale(0)
+  50%
+    transform: translate(50%,50%) scale(1)
+  75%
+    transform: translate(80px,50%) scale(1)
+  100% 
+    transform: translate(148px,50%) scale(1)
+
+@keyframes load-r 
+  0%  
+    transform: translate(148px,50%) scale(1)
+  100%  
+    transform: translate(148px,50%) scale(0) 
+
+@keyframes load-c 
+  0% 
+    background: #e8bc6e 
+  25%  
+    background: #995c28 
+  50%  
+    background: #74411f 
+  75%  
+    background: #906c54 
+  100%  
+    background: #e8bc6e 
+
+.load div 
+  position: absolute
+  width: 40px
+  height: 40px
+  border-radius: 50%
+  transform: translate(50px,50px) scale(1)
+  background: #e8bc6e
+  animation: load 1s infinite cubic-bezier(0,0.5,0.5,1)
+
+.load div:nth-child(1) 
+  background: #906c54
+  transform: translate(148px,80px) scale(1)
+  animation: load-r 0.25s infinite cubic-bezier(0,0.5,0.5,1), load-c 1s infinite step-start
+.load div:nth-child(2) 
+  animation-delay: -0.25s
+  background: #e8bc6e
+.load div:nth-child(3) 
+  animation-delay: -0.5s
+  background: #906c54
+.load div:nth-child(4) 
+  animation-delay: -0.75s
+  background: #74411f
+.load div:nth-child(5) 
+  animation-delay: -1s
+  background: #995c28
+
+.loadingOuter
+  position: fixed 
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  width: 100% 
+  height: 100% 
+  background-color: lighten($secondaryColor,45%) 
+  z-index: 999
+
+.load 
+  width: 100%
+  height: 100%
+  position: relative
+  top: 50%
+  left: 50%
+  transform: translate(-55%,-51%)
+  display: flex
+  justify-content: center
+  align-items: center
+  @include pad
+    transform: translate(-60%, -51%)
+  @include phone
+    transform: translate(-69%, -51%)
+  @include smaller
+    transform: translate(-75%, -51%)

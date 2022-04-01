@@ -1,0 +1,181 @@
+.products
+  .category
+    display: flex
+    margin-bottom: 30px
+    justify-content: flex-end
+    @include phone
+      justify-content: space-between
+    & li
+      border: 1px solid $primaryColor
+      padding: 5px 20px
+      margin-right: 10px
+      border-radius: 99rem
+      cursor: pointer
+      font-weight: bold
+      transition: 0.5s
+      box-shadow: 4px 4px 1px rgba($primaryColor,0.3)
+      @include phone
+        width: calc(100% / 4)
+        text-align: center
+      @include small
+        padding: 5px 14px
+      @include smaller
+        padding: 5px 10px
+      &:hover,&.active
+        background-color: $primaryColor
+        color: $lightColor
+        box-shadow: none
+        transform: translate(2px,2px)
+      &:last-child
+        margin-right: 0
+
+  .productsContent
+    display: flex
+    flex-wrap: wrap
+    @include xlPlus
+      flex-wrap: wrap
+    & li
+      width: calc(100% / 3 - 14px)
+      margin-right: 20px
+      margin-bottom: 20px
+      box-shadow: 2px 2px 10px rgba($secondaryColor,0.3)
+      border-radius: 5px
+      overflow: hidden
+      @include xlPlus
+        width: calc(100% / 2 - 10px)
+      @include phone
+        width: 100%
+        margin-right: 0
+      &:nth-child(2n+2)
+        @include xlPlus
+          margin-right: 0
+      &:nth-child(3n+3)
+        margin-right: 0
+      &:nth-child(2n+1)
+        @include xlPlus
+          margin-right: 20px
+        @include phone
+          margin-right: 0
+      &:hover
+        .img
+          & img
+            transform: rotate(5deg) scale(1.1)
+          &::before
+            opacity: 1
+        .detail
+          opacity: 1
+          margin-top: 0
+        .line
+          opacity: 1
+          transform: translate(-50%,-50%) rotate(-5deg)
+    .head
+      position: relative
+      display: block
+    .line
+      width: 95%
+      height: 95%
+      border: 1px solid $lightColor
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%) rotate(0deg)
+      transition: 0.5s
+      border-radius: 5px
+      z-index: 8
+      opacity: 0
+    .detail
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      z-index: 6
+      color: $lightColor
+      font-size: 20px
+      font-weight: bold
+      letter-spacing: 1px
+      opacity: 0
+      transition: 0.5s
+      margin-top: 20px
+      text-align: center
+    .img
+      overflow: hidden
+      position: relative
+      & img
+        width: 100%
+        height: 350px
+        object-fit: cover
+        transition: 0.5s
+        @include phone
+          height: 320px
+        @include small
+          height: 300px
+        @include smaller
+          height: 250px
+      &::before
+        content: ""
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        background-color: rgba(#000,0.3)
+        z-index: 5
+        transition: 0.5s
+        opacity: 0
+    .tag
+      position: absolute
+      top: 93%
+      background-color: $primaryColor
+      color: $lightColor
+      padding: 10px
+      border-radius: 0 5px 5px 0
+      font-weight: bold
+      letter-spacing: 1px
+      z-index: 9
+    .textContent
+      padding: 20px
+    .title
+      text-align: center
+      font-size: 20px
+      margin-bottom: 15px
+      font-weight: bold
+    .footer
+      display: flex
+      justify-content: space-between
+      align-items: flex-end
+    .origin
+      font-size: 12px
+      text-decoration: line-through
+      color: grey
+      font-weight: bold
+    .salePrice
+      font-size: 18px
+      margin-bottom: -8px
+      font-weight: bold
+    .addBtn
+      background-color: lighten($secondaryColor,10%)
+      color: $lightColor
+      padding: 10px
+      border-radius: 5px
+      box-shadow: 2px 2px 10px rgba($secondaryColor,0.3)
+      transition: 0.3s
+      cursor: pointer
+      font-weight: bold
+      border: none
+      &:disabled
+        background-color: #eee
+        color: #d3d3d3
+        box-shadow: none
+        cursor: not-allowed
+        &:hover
+          background-color: #eee
+          color: #d3d3d3
+          box-shadow: none
+          transform: none
+      &:hover
+        background-color: lighten($secondaryColor,15%)
+        transform: translate(1px,1px)
+        box-shadow: 2px 2px 2px rgba($secondaryColor,0.3)
+    .addLoading
+      margin-right: 8px
+      background-color: #d3d3d3

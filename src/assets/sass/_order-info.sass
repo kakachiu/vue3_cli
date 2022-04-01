@@ -1,0 +1,52 @@
+.orderInfoMain
+  @include pad
+    height: 890px
+  @include phone
+    height: auto
+  .finalTotal
+    & span
+      font-size: 30px
+  .infoTableOuter
+    overflow-y: auto
+    max-height: 328px   
+    margin-bottom: 10px
+    @include phone
+      max-height: 300px  
+    &::-webkit-scrollbar
+      width: 10px
+      background-color: #F7F7F7
+    &::-webkit-scrollbar-thumb
+      background-color: #E6E6E6 
+      border-radius: 10px
+.orderInfo
+  overflow-x: auto
+  margin-bottom: 20px
+  &::-webkit-scrollbar
+    width: 10px
+    height: 10px
+    background-color: #e2e2e2
+  &::-webkit-scrollbar-thumb
+    background-color: #c7c7c7
+    border-radius: 5px
+  .table
+    min-width: 300px
+    & th
+      padding-left: 0
+      width: 80px
+    & td
+      word-break: break-all
+  .orderNumText
+    vertical-align: middle
+  .orderNumOuter
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .tooltip
+      background-color: red !important
+    .copy
+      border: 1px solid #eee
+      background-color: #eee
+      &:hover
+        background-color: darken(#eee,5%)
+    & i
+      color: #ababab

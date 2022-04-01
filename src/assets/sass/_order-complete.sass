@@ -1,0 +1,74 @@
+.completeMain
+  @include pad
+    height: 890px
+  @include phone
+    height: auto
+.orderComplete
+  border-radius: 5px
+  text-align: center
+  background-image: url(../public/img/complete.jpg)
+  background-size: cover
+  background-position: center center
+  height: 60vh
+  display: flex
+  justify-content: center
+  align-items: center
+  position: relative
+  border-radius: 5px
+  @include phone
+    padding: 20px 10px
+  @include smaller
+    padding: 0 10px
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: rgba(black,0.4)
+    border-radius: 5px
+  .textContent
+    padding: 20px 60px
+    border-radius: 5px
+    backdrop-filter: blur(10px)
+    z-index: 9
+    @include small
+      padding: 20px
+  .icon
+    font-size: 50px
+    & i
+      color: #bfecbf
+  .title
+    color: $lightColor
+    font-size: 40px
+    font-weight: bold
+    margin-bottom: 10px
+    @include phone
+      font-size: 30px
+  .text
+    color: $lightColor
+    font-size: 20px
+    font-weight: bold
+    margin-bottom: 20px
+    @include phone
+      font-size: 18px
+    & span
+      margin-left: 5px
+    & i
+      color: lighten($secondaryColor,17%)
+  .continue
+    display: inline-block
+    background-color: $lightColor
+    border: none
+    padding: 10px 30px
+    color: $lightColor
+    cursor: pointer
+    transition: 0.5s
+    font-weight: bold
+    letter-spacing: 1px
+    border-radius: 5px
+    color: $primaryColor
+    &:hover
+      background-color: lighten($secondaryColor,17%)
+      color: $lightColor

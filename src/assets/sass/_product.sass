@@ -1,0 +1,222 @@
+.product
+  .productBreadcrumb
+    display: flex
+    margin-bottom: 10px
+    & li
+      letter-spacing: 1px
+      font-weight: bold
+      margin-right: 5px
+      &:last-child
+        margin-right: 0
+    .productName
+      color: grey
+  .productContent
+    display: flex
+    margin-bottom: 80px
+    @include padPlus
+      margin-bottom: 40px
+    @include phone
+      flex-wrap: wrap
+    .img
+      width: 50%
+      height: 75vh
+      border-radius: 5px
+      position: relative
+      box-shadow: 4px 4px 8px rgba($secondaryColor,0.4)
+      @include padPlus
+        height: 425px
+      @include phone
+        width: 100%
+        height: 300px
+        margin-bottom: 30px
+      .line
+        position: absolute
+        border: 1px solid $lightColor
+        width: 100%
+        height: 100%
+        top: 50%
+        left: 50%
+        transform: translate(-52%, -47%)
+        border-image: linear-gradient(to bottom right, $primaryColor 0%, $lightColor 100%)
+        border-image-slice: 10
+        clip-path: inset(0 round 5px)
+        @include padPlus
+          transform: translate(-54%, -47%)
+        @include pad
+          transform: translate(-53%, -47%)
+        @include smaller
+          transform: translate(-52%, -47%)
+      & img
+        border-radius: 5px
+        height: 100%
+        width: 100%
+        object-fit: cover
+    .content
+      width: 50%
+      padding: 20px 20px 20px 30px
+      @include padPlus
+        padding: 0 0 0 20px
+      @include phone
+        width: 100%
+        padding: 0
+    .head
+      margin-bottom: 20px
+    .badge
+      background-color: lighten($secondaryColor,5%)
+      border-radius: 99rem
+      padding: 5px 10px
+      color: $lightColor
+    .priceOuter
+      margin-bottom: 20px
+    .originPrice
+      color: grey
+      font-size: 14px
+      text-decoration: line-through
+    .salePrice
+      font-size: 25px
+      font-weight: bold
+    .textContent
+      border-left: 5px solid lighten($secondaryColor,10%)
+      background-color: lighten($secondaryColor,35%)
+      padding: 20px
+      border-radius: 5px
+      margin-bottom: 20px
+    .number
+      display: flex
+      align-items: center
+      margin-bottom: 20px
+      .min,.add
+        cursor: pointer
+        border: 1px solid $secondaryColor
+        padding: 10px
+        transition: 0.5s
+        & i
+          color: lighten($secondaryColor,5%)
+        &:hover
+          background-color: lighten($secondaryColor,25%)
+          & i
+            color: $lightColor
+      .min
+        border-radius: 5px 0 0 5px
+        &.active
+          pointer-events: none
+          background-color: #eee
+          border-color: #d6d6d6
+          & i
+            color: #d6d6d6
+          &:hover
+            background-color: #eee
+      .add
+        border-radius: 0 5px 5px 0
+      .num
+        max-width: 100px
+        border: none
+        padding: 10px
+        text-align: center
+        border-top: 1px solid $secondaryColor
+        border-bottom: 1px solid $secondaryColor
+        background-color: lighten($secondaryColor,35%)
+        color: lighten($secondaryColor,5%)
+        font-weight: bold
+        &:focus
+          outline: 0
+          background-color: lighten($secondaryColor,45%)
+      .num::-webkit-outer-spin-button,
+      .num::-webkit-inner-spin-button
+        -webkit-appearance: none
+        margin: 0
+      .num
+        -moz-appearance: textfield
+    .addCart
+      background-color: lighten($secondaryColor,35%)
+      padding: 10px 20px
+      max-width: 174px
+      border-radius: 5px
+      text-align: center
+      color: darken($secondaryColor,10%)
+      font-weight: bold
+      transition: 0.5s
+      cursor: pointer
+      border: none
+      &:disabled
+        background-color: #eee
+        color: #d3d3d3
+        box-shadow: none
+        cursor: not-allowed
+        &:hover
+          background-color: #eee
+          color: #d3d3d3
+          box-shadow: none
+          transform: none
+      &:hover
+        color: $lightColor
+        background-color: lighten($secondaryColor,20%)
+      .addLoading
+        margin-right: 8px
+        background-color: #d3d3d3
+  .otherProducts
+    .title
+      margin-bottom: 70px
+    .content
+      display: flex
+      position: relative
+      user-select: none
+      & li
+        position: relative
+        border-radius: 5px
+        overflow: hidden
+        box-shadow: 4px 4px 8px rgba($secondaryColor,0.5)
+        &:hover
+          & img
+            transform: rotate(5deg) scale(1.1)
+        & a
+          display: block
+      .img
+        height: 250px
+        overflow: hidden
+        @include phone
+          height: 200px
+        @include small
+          height: 180px
+        @include smaller
+          height: 150px
+      & img
+        object-fit: cover
+        width: 100%
+        height: 100%
+        transition: 0.5s
+      .tag
+        position: absolute
+        right: 0
+        background-color: rgba(#000,0.3)
+        padding: 10px
+        color: $lightColor
+        border-radius: 0 0 0 5px
+        z-index: 9
+      .text
+        background-color: lighten($secondaryColor,30%)
+        padding: 8px 20px
+        text-align: center
+        font-weight: bold
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        @include smaller
+          font-size: 14px
+      .swiper
+        padding-bottom: 10px
+      .swiper-button-prev,.swiper-button-next
+        position: absolute
+        top: -34px
+        background-color: lighten($primaryColor,10%)
+        border-radius: 5px
+        width: 40px
+        height: 40px
+        &::after
+          font-size: 14px
+          color: $lightColor
+          font-weight: bold
+      .swiper-button-next
+        left: 55px
+      .swiper-button-prev
+        left: 0
