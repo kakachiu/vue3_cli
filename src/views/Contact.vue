@@ -18,7 +18,9 @@ main.mainContent.contactMain
         error-message.invalid-feedback(name="E-MAIL")
 
         label(for="message") 想說的話
-        textarea#message(placeholder="說點什麼...")
+        Field#message.form-control(as="textarea" placeholder="說點什麼..." name="想說的話" :class="{ 'is-invalid': errors['想說的話'] }" rules="required")
+        error-message.invalid-feedback(name="想說的話")
+
         input.sendBtn(type="submit" value="送出" :disabled="Object.keys(errors).length > 0")
     .contactInfo
       .line
@@ -42,6 +44,10 @@ export default {
         width: 410,
         confirmButtonColor: '#333131',
         allowOutsideClick: false
+      }).then(result => {
+        if (result.isConfirmed) {
+          this.$refs.sendMessage.resetForm()
+        }
       })
     }
   }

@@ -17,6 +17,7 @@ loading(:active="isLoading")
 <script>
 import Swal from 'sweetalert2'
 import BackendNavbar from '@/components/BackendNavbar.vue'
+
 export default {
   data () {
     return {

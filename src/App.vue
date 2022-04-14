@@ -13,12 +13,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "~bootstrap/scss/functions";
-@import "./assets/sass/helpers/variables";
-@import "~bootstrap/scss/bootstrap";
-
-</style>
 <style lang="sass">
 @import "./assets/sass/all";
 </style>

@@ -32,6 +32,7 @@ section.login
 
 <script>
 import Swal from 'sweetalert2'
+
 export default {
   data () {
     return {
@@ -77,7 +78,7 @@ export default {
             showConfirmButton: false,
             timerProgressBar: true,
             timer: 1400,
-            width: 320
+            width: 200
           })
           Toast.fire({
             icon: 'error',

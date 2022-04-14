@@ -21,6 +21,7 @@ aside.slideBar(ref="slideBar")
 
 <script>
 import Swal from 'sweetalert2'
+
 export default {
   methods: {
     closeSlideBar () {

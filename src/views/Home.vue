@@ -14,10 +14,10 @@ main.mainContent
     .swiper-wrapper
       .swiper-slide
         i.fa-solid.fa-bullhorn.bullhorn
-        | 假日就是要放鬆，輸入 holiday，一起來放鬆
+        | 假日就是要放鬆，結帳輸入 holiday 優惠碼，一起來放鬆
       .swiper-slide
         i.fa-solid.fa-bullhorn.bullhorn
-        | 歡慶開幕，輸入 happyhours 優惠碼，將美食帶回家
+        | 歡慶開幕，結帳輸入 happyhours 優惠碼，將美食帶回家
 
   ul.breadcrumb
     li

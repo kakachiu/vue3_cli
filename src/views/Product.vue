@@ -14,10 +14,10 @@ main.mainContent
     .swiper-wrapper
       .swiper-slide
         i.fa-solid.fa-bullhorn.bullhorn
-        | 假日就是要放鬆，輸入 holiday，一起來放鬆
+        | 假日就是要放鬆，結帳輸入 holiday 優惠碼，一起來放鬆
       .swiper-slide
         i.fa-solid.fa-bullhorn.bullhorn
-        | 歡慶開幕，輸入 happyhours 優惠碼，將美食帶回家
+        | 歡慶開幕，結帳輸入 happyhours 優惠碼，將美食帶回家
 
   ul.breadcrumb
     li
@@ -46,7 +46,7 @@ main.mainContent
         .number
           .min(@click="minusNum" ref="minusNum")
             i.fa-solid.fa-minus
-          input.num(type="number" v-model.number="num"  min="1" ref="numInput")
+          input.num(type="number" v-model.number="num"  min="1" ref="numInput" @click="change")
           .add(@click="addNum")
             i.fa-solid.fa-plus
         button.addCart(type="button" @click="addCard(product.id)" :disabled="disable === product.id")
@@ -103,6 +103,16 @@ export default {
     }
   },
   methods: {
+    change () {
+      const input = this.$refs.numInput
+      const minusNum = this.$refs.minusNum
+      input.addEventListener('input', function (e) {
+        if (this.value === '0' || this.value.includes('-') || this.value === '') {
+          this.value = 1
+          minusNum.classList.add('active')
+        }
+      })
+    },
     changeCategory () {
       this.$router.push({
         path: '/products',
@@ -118,8 +128,12 @@ export default {
       this.$refs.minusNum.classList.remove('active')
     },
     addNum () {
-      this.num += 1
-      this.$refs.minusNum.classList.remove('active')
+      if (this.num === '0' || this.num < 1) {
+        this.num = 1
+      } else {
+        this.num += 1
+        this.$refs.minusNum.classList.remove('active')
+      }
     },
     minusNum () {
       if (this.num === 1) {

@@ -13,10 +13,10 @@ main.mainContent
     .swiper-wrapper
       .swiper-slide
         i.fa-solid.fa-bullhorn.bullhorn
-        | 假日就是要放鬆，輸入 holiday，一起來放鬆
+        | 假日就是要放鬆，結帳輸入 holiday 優惠碼，一起來放鬆
       .swiper-slide
         i.fa-solid.fa-bullhorn.bullhorn
-        | 歡慶開幕，輸入 happyhours 優惠碼，將美食帶回家
+        | 歡慶開幕，結帳輸入 happyhours 優惠碼，將美食帶回家
 
   ul.breadcrumb
     li
@@ -78,18 +78,22 @@ main.mainContent
           .title 填寫購買資訊
           Form.form(v-slot="{ errors }" @submit="sendOrder" ref="form")
             label(for="name") 姓名
+              sup *
             Field#name.form-control(type="text" name="姓名" :class="{ 'is-invalid': errors['姓名'] }" placeholder="HAPPY HOURS" rules="required" v-model="user.name")
             error-message.invalid-feedback(name="姓名")
 
             label(for="email") 聯絡信箱
+              sup *
             Field#email.form-control(type="email" name="E-MAIL" :class="{ 'is-invalid': errors['E-MAIL'] }" placeholder="happyhours@example.com" rules="email|required" v-model="user.email")
             error-message.invalid-feedback(name="E-MAIL")
 
             label(for="tel") 聯絡電話
+              sup *
             Field#tel.form-control(name='電話' type='tel' :class="{ 'is-invalid': errors['電話'] }" placeholder='0912345678' :rules="isPhone" v-model="user.tel")
             error-message.invalid-feedback(name='電話')
 
             label(for="address") 收件地址
+              sup *
             Field#address.form-control(type="text" name="收件地址" :class="{ 'is-invalid': errors['收件地址'] }" placeholder="請輸入收件地址" rules="required" v-model="user.address")
             error-message.invalid-feedback(name="收件地址")
 
