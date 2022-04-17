@@ -13,12 +13,10 @@ import router from './router'
 Object.keys(AllRules).forEach(rule => {
   defineRule(rule, AllRules[rule])
 })
-
 configure({
   generateMessage: localize({ zh_TW: zhTW }),
   validateOnInput: true
 })
-
 setLocale('zh_TW')
 
 const app = createApp(App)
