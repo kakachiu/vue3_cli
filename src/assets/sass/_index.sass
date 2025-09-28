@@ -351,24 +351,33 @@
 .cart
   position: fixed
   right: 2%
-  bottom: 16%
+  bottom: 15%
   z-index: 99
   display: flex
   justify-content: center
   align-items: center
   border-radius: 50%
   font-size: 30px
-  padding: 20px
   background-color: rgba($lightColor,0.9)
   box-shadow: 4px 4px 8px rgba($primaryColor,0.2)
-  @include pad
-    bottom: 13%
-  @include phone
+  width: 70px
+  height: 70px
+  @include padPlus
     bottom: 16%
+  @include pad
+    bottom: 14%
+  @include phone
+    font-size: 22px
+    width: 60px
+    height: 60px
+  @include plus
+    bottom: 15%
   @include small
-    bottom: 17%
+    bottom: 16%
+  @include smallerPlus
+    bottom: 14%
   @include smaller
-    bottom: 19%
+    bottom: 18%
   & i
     transition: 0.5s
   &:hover
@@ -407,6 +416,9 @@
   transition: 0.5s
   opacity: 0
   z-index: -2
+  @include phone
+    width: 60px
+    height: 60px
   &:hover
     & i
       color: #ce5a5a

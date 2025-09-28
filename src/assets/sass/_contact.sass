@@ -113,17 +113,23 @@
       color: $lightColor
     .title
       font-size: 40px
-      @include small
-        font-size: 30px
+      @include phone
+        font-size: 24px
+      @include plus1314
+        font-size: 20px
     .subTitle
       margin-bottom: 40px
       @include xxlPlus
-        margin-bottom: 30px
+        margin-bottom: 20px
+      @include plus1314
+        font-size: 14px
       @include small
         font-size: 14px
     .contacContent
       & p
         color: $lightColor
+        @include plus1314
+          font-size: 14px
         @include small
           font-size: 14px
     .line
