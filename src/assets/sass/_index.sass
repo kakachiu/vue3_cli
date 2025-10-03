@@ -348,85 +348,89 @@
     &:hover
       background-image: url(../public/img/beverage1.jpg)
 
-.cart
+.operateOuter
   position: fixed
+  z-index: 999
   right: 2%
   bottom: 15%
-  z-index: 99
-  display: flex
-  justify-content: center
-  align-items: center
-  border-radius: 50%
-  font-size: 30px
-  background-color: rgba($lightColor,0.9)
-  box-shadow: 4px 4px 8px rgba($primaryColor,0.2)
-  width: 70px
-  height: 70px
-  @include padPlus
-    bottom: 16%
-  @include pad
-    bottom: 14%
   @include phone
-    font-size: 22px
-    width: 60px
-    height: 60px
-  @include plus
-    bottom: 15%
-  @include small
-    bottom: 16%
-  @include smallerPlus
-    bottom: 14%
-  @include smaller
-    bottom: 18%
-  & i
-    transition: 0.5s
-  &:hover
-    & i
-      color: #ce5a5a
-  .num
-    position: absolute
-    top: -8px
-    right: -4px
-    font-size: 16px
-    color: #fff
-    background-color: #ce5a5a
-    width: 28px
-    height: 28px
-    padding: 10px
-    border-radius: 50%
+    right: 5%
+
+  .cart
+    position: relative
     display: flex
     justify-content: center
     align-items: center
-    box-shadow: 4px 4px 8px rgba($primaryColor,0.3)
-
-.toTop
-  position: fixed
-  right: 2%
-  bottom: 5%
-  z-index: 99
-  border-radius: 50%
-  width: 70px
-  height: 70px
-  background-color: rgba($lightColor,0.9)
-  box-shadow: 4px 4px 8px rgba($primaryColor,0.2)
-  display: flex
-  justify-content: center
-  align-items: center
-  font-size: 30px
-  transition: 0.5s
-  opacity: 0
-  z-index: -2
-  @include phone
-    width: 60px
-    height: 60px
-  &:hover
+    border-radius: 50%
+    font-size: 30px
+    background-color: rgba($lightColor,0.9)
+    box-shadow: 4px 4px 8px rgba($primaryColor,0.2)
+    width: 70px
+    height: 70px
+    // @include padPlus
+    //   bottom: 16%
+    // @include pad
+    //   bottom: 14%
+    @include phone
+      font-size: 22px
+      width: 60px
+      height: 60px
+    // @include plus
+    //   bottom: 15%
+    // @include small
+    //   bottom: 16%
+    // @include smallerPlus
+    //   bottom: 14%
+    // @include smaller
+    //   bottom: 18%
     & i
-      color: #ce5a5a
-  &.active
-    opacity: 1
-    z-index: 9
-  & i
+      transition: 0.5s
+    &:hover
+      & i
+        color: #ce5a5a
+    .num
+      position: absolute
+      top: -8px
+      right: -4px
+      font-size: 16px
+      color: #fff
+      background-color: #ce5a5a
+      width: 28px
+      height: 28px
+      padding: 10px
+      border-radius: 50%
+      display: flex
+      justify-content: center
+      align-items: center
+      box-shadow: 4px 4px 8px rgba($primaryColor,0.3)
+
+  .toTop
+    position: relative
+    top: 155px
+    border-radius: 50%
+    width: 70px
+    height: 70px
+    background-color: rgba($lightColor,0.9)
+    box-shadow: 4px 4px 8px rgba($primaryColor,0.2)
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 30px
     transition: 0.5s
+    opacity: 0
+    z-index: -2
+    @include phone
+      width: 60px
+      height: 60px
+      top: 130px
+    &:hover
+      & i
+        color: #ce5a5a
+    &.active
+      opacity: 1
+      z-index: 9
+    & i
+      transition: 0.5s
 
 .padHead
   display: none

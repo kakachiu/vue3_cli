@@ -1,5 +1,7 @@
 <template lang="pug">
-CartNum
+.operateOuter
+  Totop
+  CartNum
 main.mainContent
   loading(:active="isLoading")
     .loadingOuter
@@ -70,6 +72,7 @@ main.mainContent
 </template>
 
 <script>
+import Totop from '@/components/Totop.vue'
 import CartNum from '@/components/CartNum.vue'
 import Swiper from 'swiper/swiper-bundle.min.js'
 import 'swiper/swiper-bundle.css'
@@ -84,6 +87,7 @@ export default {
     }
   },
   components: {
+    Totop,
     CartNum
   },
   methods: {

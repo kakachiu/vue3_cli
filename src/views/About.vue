@@ -1,5 +1,7 @@
 <template lang="pug">
-CartNum
+.operateOuter
+  Totop
+  CartNum
 main.mainContent
   loading(:active="isLoading")
     .loadingOuter
@@ -60,6 +62,7 @@ main.mainContent
 <script>
 import AOS from 'aos/dist/aos.js'
 import 'aos/dist/aos.css'
+import Totop from '@/components/Totop.vue'
 import CartNum from '@/components/CartNum.vue'
 
 export default {
@@ -69,6 +72,7 @@ export default {
     }
   },
   components: {
+    Totop,
     CartNum
   },
   mounted () {

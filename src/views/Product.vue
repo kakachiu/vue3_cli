@@ -1,5 +1,7 @@
 <template lang="pug">
-CartNum
+.operateOuter
+  Totop
+  CartNum
 main.mainContent
   loading(:active="isLoading")
     .loadingOuter
@@ -72,6 +74,7 @@ import Swal from 'sweetalert2'
 import Swiper from 'swiper/swiper-bundle.min.js'
 import 'swiper/swiper-bundle.css'
 import emitter from '@/libs/emitter.js'
+import Totop from '@/components/Totop.vue'
 import CartNum from '@/components/CartNum.vue'
 
 export default {
@@ -92,6 +95,7 @@ export default {
     }
   },
   components: {
+    Totop,
     CartNum
   },
   computed: {
