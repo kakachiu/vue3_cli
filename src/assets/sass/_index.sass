@@ -352,12 +352,12 @@
   position: fixed
   z-index: 999
   right: 2%
-  bottom: 15%
+  bottom: 5%
   @include phone
     right: 5%
-
   .cart
     position: relative
+    top: -70px
     display: flex
     justify-content: center
     align-items: center
@@ -367,22 +367,10 @@
     box-shadow: 4px 4px 8px rgba($primaryColor,0.2)
     width: 70px
     height: 70px
-    // @include padPlus
-    //   bottom: 16%
-    // @include pad
-    //   bottom: 14%
     @include phone
       font-size: 22px
       width: 60px
       height: 60px
-    // @include plus
-    //   bottom: 15%
-    // @include small
-    //   bottom: 16%
-    // @include smallerPlus
-    //   bottom: 14%
-    // @include smaller
-    //   bottom: 18%
     & i
       transition: 0.5s
     &:hover
@@ -406,7 +394,7 @@
 
   .toTop
     position: relative
-    top: 155px
+    top: 80px
     border-radius: 50%
     width: 70px
     height: 70px
@@ -422,7 +410,7 @@
     @include phone
       width: 60px
       height: 60px
-      top: 130px
+      top: 60px
     &:hover
       & i
         color: #ce5a5a
