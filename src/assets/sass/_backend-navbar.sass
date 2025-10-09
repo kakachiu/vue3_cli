@@ -36,7 +36,7 @@
     display: flex
     flex-direction: column
     justify-content: space-between
-    height: 87%
+    height: calc(100vh - 183px)
     @include phone
       justify-content: flex-start
     & a
@@ -70,7 +70,6 @@
           color: $infoColor
   .logout
     border: 2px solid grey
-    margin-bottom: 10px
     box-shadow: 3px 3px 3px 0px rgba(grey,0.3)
     border-radius: 4px
     transition: 1s
