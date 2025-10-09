@@ -32,7 +32,7 @@ aside.slider(ref="slider")
         i.fa-solid.fa-envelope
     .backArrow(@click="closeSlider")
       i.fa-solid.fa-arrow-left-long BACK
-  .copyRight Copyright © 2022 HAPPY HOURS. All rights reserved.
+  .copyRight Copyright © 2025 HAPPY HOURS. All rights reserved.
 
 .padHead
   i.fa-solid.fa-bars.menuBar(@click="openSlider")
