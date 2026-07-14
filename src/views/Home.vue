@@ -47,7 +47,8 @@ main.mainContent
       p.text 享受美食 | 享受當下 | 享受生活
 
   section.foodType
-    .breadImg.commonImg(@click="category = '麵包';changeCategory()")
+    .breadImg.commonImg(@click="category = '麵包';changeCategory()"
+    :class="{ 'isReady': hoverImageReady }")
       .line
       .line2
       p.type BREAD
@@ -55,14 +56,16 @@ main.mainContent
         span 麵包
       p.subTitle 嚴選麵粉 | 精緻手工 | Q彈口感
     .otherImg
-      .dessert.commonImg(@click="category = '甜點';changeCategory()")
+      .dessert.commonImg(@click="category = '甜點';changeCategory()"
+      :class="{ 'isReady': hoverImageReady }")
         .line
         .line2
         p.type DESSERT
         p.title 品
           span 甜點
         p.subTitle 甜而不膩 | 幸福滋味 | 極致口感
-      .beverage.commonImg(@click="category = '飲品';changeCategory()")
+      .beverage.commonImg(@click="category = '飲品';changeCategory()"
+      :class="{ 'isReady': hoverImageReady }")
         .line
         .line2
         p.type BEVERAGE
@@ -101,6 +104,14 @@ export default {
     }
   },
   mounted () {
+    const img = new Image()
+    img.onload = () => {
+      this.hoverImageReady = true
+    }
+    img.src = '/img/bread1.jpg'
+    img.src = '/img/dessert1.jpg'
+    img.src = '/img/beverage1.jpg'
+
     this.isLoading = true
     setTimeout(() => {
       this.isLoading = false
