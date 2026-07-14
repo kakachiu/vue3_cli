@@ -108,9 +108,9 @@ export default {
     img.onload = () => {
       this.hoverImageReady = true
     }
-    img.src = '/img/bread1.jpg'
-    img.src = '/img/dessert1.jpg'
-    img.src = '/img/beverage1.jpg'
+    img.src = process.env.BASE_URL + 'img/bread1.jpg'
+    img.src = process.env.BASE_URL + 'img/dessert1.jpg'
+    img.src = process.env.BASE_URL + 'img/beverage1.jpg'
 
     this.isLoading = true
     setTimeout(() => {
